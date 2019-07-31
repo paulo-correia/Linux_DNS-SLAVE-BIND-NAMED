@@ -18,7 +18,8 @@ Edite o arquivo **/etc/bind/named.conf.local**, inclua uma linha em branco e ap�
 Na configuração do DNS master altere o arquivo **/etc/bind/named.conf.options** e logo abaixo do encaminhamento de DNS coloque a linha abaixo:
 
 `allow-transfer { localhost; IP_DO_MASTER; IP_DO_SLAVE; };`
-Onde o IP_DO_SLAVE é o IP deste servidor.
+
+Onde o **IP_DO_SLAVE** é o IP deste servidor.
 
 Reinicie o serviço de DNS no master:
 
