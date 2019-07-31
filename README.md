@@ -23,12 +23,14 @@ Onde o IP_DO_SLAVE é o IP deste servidor.
 Reinicie o serviço de DNS no master:
 
 `service bind9 restart`
+
 Se tudo der certo será criado o arquivo de host na pasta zones recém criada.
 
 ### CentOS
 Instale o bind server e as ferramentas do bind com o comando:
 
 ` yum -y install bind bind-utils`
+
 Dê a permissão para o named gravar no diretório **/var/named**, digite o comando:
 
 ` chown named.named /var/named`
@@ -57,6 +59,7 @@ Onde o **IP_DO_MASTER** é o IP do servidor onde está o DNS master.
 Testando o DNS, digite o comando:
 
 `nslookup (NOME_DO_SERVER).home.lan IP_DO_MASTER`
+
 Que dever retornar algo como:
 
 ```
@@ -82,5 +85,6 @@ Onde: **IP_DO_MASTER** é o IP do servidor o DNS master
 Obs: Se este arquivo é modificado a cada inicialização proteja-o dando o comando:
 
 `chattr +i /etc/resolv.conf`
+
 Obs2: Para tirar a proteção altere de **+i** para **-i**
 Obs3: Se for feito isto na consulta não precisa colocar o IP do servidor o DNS master.
